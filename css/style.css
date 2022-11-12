@@ -188,6 +188,8 @@ body{
     height: 100%;
     z-index: 1;
     background: rgba(0, 0, 0, 0.2);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden{
     opacity: 0;
@@ -198,13 +200,14 @@ body{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     width: 528px;
     height: 581px;
     background: #FFFFFF;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    transform: scale(1) translate(-50%, -50%);
+    
+    transform: translate(-50%, -50%) scale(1);
+    
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);     
 }
 .modal-btn{
@@ -227,7 +230,7 @@ body{
     fill: #000000;;
 }
 .backdrop.is-hidden .modal{
-    transform: translate(-50%, -50%) scale(0.4);
+    transform: translate(-50%, -50%) scale(0.9);
 }
 
 /* section2 */
@@ -286,12 +289,19 @@ body{
     position: relative;
 }
 .overlay-duty{
+    display: flex;
     position: absolute;
+    justify-content: center;
+    align-items: center;
     bottom: 0;
     width: 100%;
-    padding-top: 27px;
-    padding-bottom: 27px;
+    height: 70px;
     background: rgba(47, 48, 58, 0.8);
+}
+.duty-image{
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 .overlay-duty-text{
     font-family: 'Roboto';
